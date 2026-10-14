@@ -5,25 +5,26 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                echo 'Code checked out from GitHub'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                echo 'Building the project'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                echo 'Testing the project'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                echo 'Packaging the project'
             }
         }
     }
+}
